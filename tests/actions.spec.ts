@@ -36,7 +36,7 @@ test("Radio button Actions", async({page})=>{
 })
 
 //checkbox
-test.only("Checkbox Actions", async({page})=>{
+test("Checkbox Actions", async({page})=>{
 
     await page.goto("https://testautomationpractice.blogspot.com/");
    
