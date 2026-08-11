@@ -10,6 +10,7 @@ await page.getByPlaceholder("Password").fill("admin123");
  await page.locator("button[type=submit]").click();
 
  //click on PIM
+ await page.waitForTimeout(2000);
  await page.getByText("PIM").click();
 
  //click on job title dropdowj
