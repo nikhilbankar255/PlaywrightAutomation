@@ -14,7 +14,7 @@ test("Autosuggest dropdown", async ({ page }) => {
     const search = page.locator("input[name='q']").first(); // search box
     await search.click();
     await search.fill("mobile");
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(3000);
 
     //get all the suggested options -- ctrl+sift+p -> enter emulate a focused page then can inspect results
     const options: Locator = page.locator("ul>li");
