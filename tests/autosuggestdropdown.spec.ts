@@ -30,6 +30,7 @@ test("Autosuggest dropdown", async ({ page }) => {
     //select option
     for (let i = 0; i < count; i++) {
         const mobile = await options.nth(i).innerText();
+        await page.waitForTimeout(2000);
         if (mobile === 'mobile under 20000rs') {
             await options.nth(i).click();
             break;
