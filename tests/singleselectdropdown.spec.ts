@@ -27,6 +27,7 @@ test("Single select dropdown", async({page})=>{
     const texts: string[]=(await options.allTextContents()).map(text=>text.trim());
      expect(texts).toContain("Japan");
     
+     //4. printing options from the dropdown
      for(const text of texts)
      {
         console.log(text);
