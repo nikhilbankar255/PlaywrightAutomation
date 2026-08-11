@@ -11,13 +11,13 @@ pipeline {
 
         stage('Install Playwright') {
             steps {
-                bat 'npx playwright install --project=chromium'
+                bat 'npx playwright install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'npx playwright test '
+                bat 'npx playwright test --project=chromium'
             }
         }
     }
