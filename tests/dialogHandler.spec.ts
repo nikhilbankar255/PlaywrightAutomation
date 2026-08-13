@@ -29,14 +29,13 @@ test("Confirm Dialog handle", async ({ page }) => {
         console.log("Dialog message:", dialog.message());
 
         expect(dialog.type()).toBe("confirm");
-        expect(dialog.message()).toContain("Press a button!");
+        expect(dialog.message()).toBe("Press a button!");
         dialog.dismiss();
     });
 
     await page.locator("#confirmBtn").click();
     const text = await page.locator("#demo").innerText();
     console.log("Text after dismissing confirm dialog:", text);
-
     expect(page.locator("#demo")).toHaveText("You pressed Cancel!");
 })
 
@@ -51,10 +50,9 @@ test("Prompt Dialog handle", async ({ page }) => {
         console.log("Dialog message:", dialog.message());
 
         expect(dialog.type()).toBe("prompt");
-        expect(dialog.message()).toContain("Please enter your name:");
+        expect(dialog.message()).toBe("Please enter your name:");
 
-        expect(dialog.defaultValue()).toContain("Harry Potter");
-
+        expect(dialog.defaultValue()).toBe("Harry Potter");
         dialog.accept("nikhil is testing playwright");
     });
 
