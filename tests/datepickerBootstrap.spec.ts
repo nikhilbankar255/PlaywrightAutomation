@@ -28,10 +28,11 @@ async function selectDate(targetMonthYear: string, targetDay: string, page: Page
 
     await page.locator("//span[text()=" + targetDay + "]").click();
 }
-test("Bootstrap datepicker", async ({ page }) => {
+test("Bootstrap datepicker", async ({ page, browserName }) => {
+    test.skip(browserName !== "firefox", "This test runs only on Firefox");
 
     await page.goto("https://www.redbus.in/");
-    await page.waitForTimeout(2000);
+    
     await page.locator("div[role='dialog']").click();
 
     //seect target date
