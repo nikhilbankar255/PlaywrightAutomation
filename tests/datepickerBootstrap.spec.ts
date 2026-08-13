@@ -31,12 +31,13 @@ async function selectDate(targetMonthYear: string, targetDay: string, page: Page
 test("Bootstrap datepicker", async ({ page }) => {
 
     await page.goto("https://www.redbus.in/");
+    await page.waitForTimeout(2000);
     await page.locator("div[role='dialog']").click();
 
     //seect target date
     const monthYear = "November 2026";
     const day = "20";
-    
+
     await selectDate(monthYear, day, page);
     await page.waitForTimeout(2000);
 })
