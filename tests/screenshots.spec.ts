@@ -20,7 +20,7 @@ test("Scrrenshot handle", async ({ page }) => {
     await section.screenshot({ path: 'screenshots/' + 'section' + timeStamp + '.png' })
 })
 
-test.only("screebshots from config", async ({ page }) => {
+test("screenshots from config", async ({ page }) => {
 
     await page.goto("https://www.demoblaze.com/");
     await page.getByRole('link', { name: 'Log in' }).click();
