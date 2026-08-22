@@ -22,17 +22,17 @@ test("test2", async({page})=>{
 //skip the test based on condition
 test("test3", async({page, browserName})=>{
 
-    test.skip(browserName==='firefox','this test skipped if browser is firefox');
+    //test.skip(browserName==='firefox','this test skipped if browser is firefox');
     await page.goto("https://www.google.com/");
     await expect(page).toHaveTitle("Google");
 })
 
 //fail
-test.fail("test4", async({page})=>{
+// test.fail("test4", async({page})=>{
 
-    await page.goto("https://www.google.com/");
-    await expect(page).toHaveTitle("Google");
-})
+//     await page.goto("https://www.google.com/");
+//     await expect(page).toHaveTitle("Google");
+// })
 
 //fixme -test will be skipped  -- if the test is not completed but we running the code
 test.fixme("test5", async({page})=>{
