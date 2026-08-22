@@ -21,26 +21,27 @@ test.beforeEach("Login", async () => {
 });
 
 test.afterEach("Logout", async () => {
-
     await page.locator("#logout2").click();
 });
 
-test("Find number of Products", async () => {
+//created group of tests
+test.describe("MyGroup", async () => {          
+    test("Find number of Products", async () => {
 
-    const products = page.locator(".hrefch");
-    const count = await products.count();
-    console.log("Number of products:", count);
-    await expect(products).toHaveCount(9);
-});
-
-test("Add Product to cart", async () => {
-
-    await page.locator("text='Samsung galaxy s6'").click();
-
-    page.once('dialog', async (dialog) => {
-        expect(dialog.message()).toContain("Product added.");
-        await dialog.accept();
+        const products = page.locator(".hrefch");
+        const count = await products.count();
+        console.log("Number of products:", count);
+        await expect(products).toHaveCount(9);
     });
 
-    await page.locator(".btn.btn-success.btn-lg").click();
-});
+    test("Add Product to cart", async () => {
+        await page.locator("text='Samsung galaxy s6'").click();
+
+        page.once('dialog', async (dialog) => {
+            expect(dialog.message()).toContain("Product added.");
+            await dialog.accept();
+        });
+
+        await page.locator(".btn.btn-success.btn-lg").click();
+    });
+})
