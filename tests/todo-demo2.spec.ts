@@ -16,5 +16,5 @@ test('test to do app@regression', async ({ page }) => {
   await page.getByTestId('text-input').fill('study');
   await page.getByTestId('text-input').press('Enter');
   await expect(page.getByTestId('todo-list')).toContainText('');
-  await expect(page.getByTestId('todo-list')).toMatchAriaSnapshot(`- text: stu`);
+  await expect(page.getByTestId('todo-list')).toMatchAriaSnapshot(`- text: study`);
 });
